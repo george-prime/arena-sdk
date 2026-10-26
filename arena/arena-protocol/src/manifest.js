@@ -250,6 +250,24 @@ export function scalarFits(sc, m) {
 }
 /** Is this manifest a scalar market (feature 8): an attested market paid linearly by a signed value between bounds? */
 export const isScalar = (m) => !!m && m.resultType === RESULT_TYPE.ATTESTED && !!m.scalar;
+/**
+ * ATTESTORS DRAWN PER ROUND (kanban #630, protocol 21): an attested game that names no keys of its own but a draw - `attestDraw`
+ * { count 7, threshold 5 }, after its own marker - is attested by the 7 node keys its round draws (sortition.js drawAttestors),
+ * an outcome standing with 5 of them. Its `attestors` are written empty and its threshold 0, as a market on a game's are. Any round
+ * protocol: a seat that cannot read the draw cannot load the manifest.
+ */
+export const ATTEST_DRAW_MARKER = 0x09;
+export const isDrawnAttest = (m) => !!m && m.resultType === RESULT_TYPE.ATTESTED && !!m.attestDraw;
+export function attestDrawFits(d, m) {
+  if (!d || d.count !== 7 || d.threshold !== 5) return { ok: false, why: 'a drawn attestor set is 7 of the round\'s nodes, an outcome standing with 5 (#630)' };
+  if (!Array.isArray(m.attestors) || m.attestors.length !== 0 || m.attestThreshold !== 0)
+    return { ok: false, why: 'a game whose attestors are drawn names no attestor keys and a threshold of 0' };
+  if (m.gameSource !== undefined && m.gameSource !== null) return { ok: false, why: 'a market on a game has no attestors to draw: its outcome is its source round\'s signed result' };
+  if (m.scalar !== undefined && m.scalar !== null) return { ok: false, why: 'a scalar market\'s attestors are not drawn yet (#630 covers outcome markets)' };
+  // NO ROUND PROTOCOL GATE: who attests is the game's term, not a round rule - a seat that cannot read the draw cannot load the manifest
+  // at all, so it hosts none of its rounds (a version gate would have moved Up/Down's rounds from protocol 3 to 21, every rule between)
+  return { ok: true };
+}
 
 
 /**
@@ -348,7 +366,8 @@ export function encodeManifestBody(m) {
     // A MARKET ON A GAME (feature 6) NAMES NO ATTESTOR: its outcome is its source round's signed result, so the
     // fields are written empty and nothing an attestor signs can decide it; every other attested game names 1 to 16, as before
     const onGame = m.gameSource !== undefined && m.gameSource !== null;
-    if (onGame) {
+    if (m.attestDraw !== undefined && m.attestDraw !== null) { const f = attestDrawFits(m.attestDraw, m); if (!f.ok) throw new Error(f.why); }
+    else if (onGame) {
       if (!Array.isArray(m.attestors) || m.attestors.length !== 0 || m.attestThreshold !== 0)
         throw new Error('a market on a game names no attestors and a threshold of 0: its outcome is its source round\'s signed result');
     } else {
@@ -462,6 +481,8 @@ export function encodeManifestBody(m) {
     }
     // ITS PROTOCOL RESERVE, after its own marker and only when its terms name one: every manifest before keeps its bytes
     if (m.marketTerms && m.marketTerms.reserveBps) { w.u8(MARKET_RESERVE_MARKER); w.u16(m.marketTerms.reserveBps); }
+    // ITS ATTESTOR DRAW (#630), after its own marker and only when it names one: every attested manifest before keeps its bytes
+    if (m.attestDraw) { w.u8(ATTEST_DRAW_MARKER); w.u8(m.attestDraw.count); w.u8(m.attestDraw.threshold); }
   }
   // A HEAD-TO-HEAD GAME'S OWN TERMS, likewise after everything else: no other manifest's bytes move
   if (isHeadToHead(m)) {
@@ -523,6 +544,10 @@ function readBody(r) {
       r.u8();
       if (!body.marketTerms) throw new Error('a market\'s protocol reserve is part of its terms, and this manifest names none');
       body.marketTerms.reserveBps = r.u16();
+    }
+    if (r.at < r.b.length - MANIFEST_SIGNATURE_BYTES && r.b[r.at] === ATTEST_DRAW_MARKER) {
+      r.u8();
+      body.attestDraw = { count: r.u8(), threshold: r.u8() };
     }
   }
   if (body.resultType === RESULT_TYPE.HEAD_TO_HEAD) {

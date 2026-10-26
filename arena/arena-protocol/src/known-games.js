@@ -371,6 +371,144 @@ export const KNOWN_GOOD_GAMES = Object.freeze({
     fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
     terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
   }),
+  '8be37be1196aa62cca1f7066b40ccad10f7b33555b5315b3b174568e3585fa8c': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 16, parent 0860b4a7 - version 15 in every term, with the new client (everything drawn by React, kanban #564)
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  '5add5235b912410e9afaf2d7b38fab7deeb82fe455bbc730f5c38da1d7b81dbc': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 17, parent 8be37be1 - version 16 in every term, its client's comments cleaned
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  '600ef6dde43f818e8ff46a78da9fb8c907fcbaa01ea5af59a756dc2c62459613': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 18, parent 5add5235 - version 17 in every term, its client both halves of the book: Buy or Sell (kanban #588)
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  'ac082fd8491611d4f2a8c1d1b977b2b3389d1e2f12fee3832fdf6ce0c3bf6d9a': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 19, parent 600ef6dd - version 18 in every term, a cancel on each resting sell (kanban #591)
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  '04f468bf514c2af3cefee153d1cccf7b06c18ce1cb08f8e5fede7e92338857d6': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 20, parent ac082fd8 - version 19 in every term but its clients: only the pages with no names or ticket numbers (kanban #523)
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  '5fba7f5e0d4eb5da10c1eb6472ba862f8099e7c2e94be4645c483eb3a03b4a4f': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 21, parent 04f468bf - version 20 in every term, each order's times on its card and in the past orders
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  '9a49869c11c5cd52cf0e5a2ca49f42a549c20f7b86f1fbd9fba0f065bc608556': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 22, parent 5fba7f5e - version 21 in every term, the card's times named submitted, placed, lock
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  '90fcf7464f555e003049361ee370f392c766146dd840032cd6954640047711ea': Object.freeze({
+    name: 'btc-updown-15m',
+    // manifest version 23, parent 9a49869c - version 22 in every term, each order's transaction id to the explorer
+    requiredProtocolVersion: 2,
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze(['3b74d3284f0a1a5148e39b826feaa9b222cc6717a24fbcc9a0cb00f39fb1935d', '6e304439f7f82be4f16baf3668df9a324181f21bd755d5c44e413913b5c444ab', '7072d7a4eb29dbe9ebc380a6d10cbcd65707f243d58d9f3ad9280445fd32f70d']),
+      threshold: 2, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60, reserveBps: 20 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+  }),
+  '13699356aae534eeb753de4d441dc223698f429f25aeb30ea3e25f4b4e24993e': Object.freeze({
+    name: 'rock-paper-scissors',
+    //: manifest version 4, parent 90f462c8 - version 3's rules (core f86afd62, the same decide), the table drawn by React (kanban #564, #523)
+    requiredProtocolVersion: 2,
+    // ONE COMMITTEE AND ONE KEY PER TABLE (2026-10-13 ~21:10Z, pick (c)): a table's rounds - one grid series -
+    // are drawn and seated once, by the table's first round, and every 8 s round after plays on that committee's claim key
+    seatsPerTable: true,
+    cores: Object.freeze({
+      'f86afd62734989cca3004021d00879af5d57008958908ca28973100625d7f031': Object.freeze(['0d562087b31feef63e89c7b558f725f6ca44a1eb1e88f5c2779ea8055ae36172']),
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+  }),
+  '62a940ae282fe143b65802e2a36a1dd46618738fb55c12ab1f77e5955637573e': Object.freeze({
+    name: 'rock-paper-scissors',
+    //: manifest version 5, parent 13699356 - version 4 in every term, everything drawn by React (kanban #564)
+    requiredProtocolVersion: 2,
+    // ONE COMMITTEE AND ONE KEY PER TABLE (2026-10-13 ~21:10Z, pick (c)): a table's rounds - one grid series -
+    // are drawn and seated once, by the table's first round, and every 8 s round after plays on that committee's claim key
+    seatsPerTable: true,
+    cores: Object.freeze({
+      'f86afd62734989cca3004021d00879af5d57008958908ca28973100625d7f031': Object.freeze(['0d562087b31feef63e89c7b558f725f6ca44a1eb1e88f5c2779ea8055ae36172']),
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+  }),
   'b8b88e233baac6671c8ac6da8193f816d7f552423a3888b184018b7b49839651': Object.freeze({
     name: 'nextblock',
     // 2026.0.3: manifest version 3, parent c693585b, sells the larger truck (core f0cc7b7b), protocol 10 - added by hand
@@ -401,5 +539,42 @@ export const KNOWN_GOOD_GAMES = Object.freeze({
     sharedWorld: Object.freeze(['2170f25079f5652ba0633f4b44032c1c9b4dac094e6df99dd001e74b5586293d']),
     gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
     requiredProtocolVersion: 11,
+  }),
+  //: manifest version 5, parent 76f50510 (kanban #523) - version 4 in every term but its cores and clients: the two cores with their
+  // comments cleaned of names, ticket numbers and blwp (a5c5766a the truck, 0847c99f the truck that knows the larger truck), their bundles
+  '09bfe97a6a2b640b69ee9f4a175d25e091ee7229e536f1f3e1adc431f60afb1b': Object.freeze({
+    name: 'nextblock',
+    cores: Object.freeze({
+      '0847c99f60e694e106fce0a79ac252b3e6170a343db52a95e3b5052a7e00a5f1': Object.freeze(['2170f25079f5652ba0633f4b44032c1c9b4dac094e6df99dd001e74b5586293d', 'f51759b6bdc6c738e46910816936c84d72d57e33d2cf04816618912557a76a7c']),
+      'a5c5766a7902b6703ebe9382cea9154adc777af3e5cafa766265e971efa52c5a': Object.freeze(['2170f25079f5652ba0633f4b44032c1c9b4dac094e6df99dd001e74b5586293d', 'f51759b6bdc6c738e46910816936c84d72d57e33d2cf04816618912557a76a7c']),
+    }),
+    sharedWorld: Object.freeze(['2170f25079f5652ba0633f4b44032c1c9b4dac094e6df99dd001e74b5586293d']),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    requiredProtocolVersion: 11,
+  }),
+  //: manifest version 6, parent 09bfe97a (kanban #523) - version 5 in every term but the game's mark: the icon and the wordmark cleaned
+  'd325744b4a6b7351a8ba28ae235ef7f72e843eeac6ce5e05d65374aed77f8659': Object.freeze({
+    name: 'nextblock',
+    cores: Object.freeze({
+      '0847c99f60e694e106fce0a79ac252b3e6170a343db52a95e3b5052a7e00a5f1': Object.freeze(['2170f25079f5652ba0633f4b44032c1c9b4dac094e6df99dd001e74b5586293d', 'f51759b6bdc6c738e46910816936c84d72d57e33d2cf04816618912557a76a7c']),
+      'a5c5766a7902b6703ebe9382cea9154adc777af3e5cafa766265e971efa52c5a': Object.freeze(['2170f25079f5652ba0633f4b44032c1c9b4dac094e6df99dd001e74b5586293d', 'f51759b6bdc6c738e46910816936c84d72d57e33d2cf04816618912557a76a7c']),
+    }),
+    sharedWorld: Object.freeze(['2170f25079f5652ba0633f4b44032c1c9b4dac094e6df99dd001e74b5586293d']),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    requiredProtocolVersion: 11,
+  }),
+  // UP/DOWN VERSION 24 (kanban #630): no attestor keys - each round's 7 are drawn from its census, 5 decide; protocol 2, as version 23
+  '8e47d27fd39597cfa6e29412efa450a994f013b5db8d553ce55304da000cb3ca': Object.freeze({
+    name: 'btc-updown-15m',
+    cores: Object.freeze({
+
+    }),
+    sharedWorld: Object.freeze([]),
+    gameDonationSetId: 'a5dc55c1ffef31fae9b7450fb687334675089bb33aea54c667e233c9b3c23779',
+    attested: Object.freeze({ outcomes: Object.freeze(['Up','Down']), attestors: Object.freeze([]),
+      threshold: 0, devKey: '65bcaf4120e334b6c17f276376d0b7129866317ab2a9b178ae0188e9c358a11a', networks: Object.freeze(['1060078b1d4458b32c47aa68279f2260ad8e731ae365ce3f22260dbdc92d7a15']), attestDraw: Object.freeze({ count: 7, threshold: 5 }) }),
+    fee: Object.freeze({ nodeBps: 40, donationBps: 60 }),
+    terms: Object.freeze({ resolveAfterCloseMs: '0', deadlineAfterResolveMs: '600000' }),
+    requiredProtocolVersion: 2,
   }),
 });

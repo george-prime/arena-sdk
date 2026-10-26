@@ -418,6 +418,8 @@ export const TAG = {
   // everywhere else, and a seed that shared a tag with anything could be
   // produced by hashing that other thing.
   committeeSeed: 'ARENA/v1/CommitteeSeed',
+  // #630: a round's attestors are drawn on their own seed, H(this tag || committee seed) - never the settlement draw's
+  attestorDraw: 'ARENA/v1/AttestorDraw',
   checkpoint: 'ARENA/v1/Checkpoint',
   checkpointReceipt: 'ARENA/v1/CheckpointReceipt',
   result: 'ARENA/v1/Result',
